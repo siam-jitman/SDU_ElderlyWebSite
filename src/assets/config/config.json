@@ -1,0 +1,8 @@
+{
+  "app": {
+    "name": "Elderly Web Site",
+    "version": "1.0.0",
+    "description": "A Vue.js project"
+  },
+  "secureKey": "iDjbQgNqvlY2xKxlPpq4devUurTJ6NFY"
+}
