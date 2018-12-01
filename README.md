@@ -1,6 +1,6 @@
-# elderlywebsite
+# elderly_people
 
-> A Vue.js project
+> Is an elder website
 
 ## Build Setup
 
