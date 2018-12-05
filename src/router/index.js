@@ -21,7 +21,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/content',
+      path: '/content/:idContent',
       name: 'content',
       component: Content
     },
@@ -77,4 +77,3 @@ export default new Router({
     }
   ]
 })
-
