@@ -12,6 +12,7 @@ import Ebook from '@/components/ebook_page'
 import Cartoon from '@/components/cartoon_page'
 import Animation from '@/components/animation_page'
 import ContentVideo from '@/components/video_content_page'
+import Search from '@/components/search'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -74,6 +75,11 @@ export default new Router({
       path: '/ContentVideo',
       name: 'ContentVideo',
       component: ContentVideo
+    },
+    {
+      path: '/ค้นหา',
+      name: 'Search',
+      component: Search
     }
   ]
 })

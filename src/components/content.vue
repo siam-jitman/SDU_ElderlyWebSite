@@ -21,8 +21,8 @@
               <span class="sr-only">(current)</span>
             </router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascrip:void(0);">ค้นหา</a>
+           <li class="nav-item">            
+            <router-link  class="nav-link" to="/ค้นหา">ค้นหา</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -56,14 +56,15 @@
         </ul>
       </div>
     </nav>
-    <div class="bg-pos-head">
+    <div class="image-header-function-bg" :style="{ 'backgroundImage': 'url(\'' + setUrlImageProfile(info.imageContent) + '\')' }"></div>
+    <!-- <div class="bg-pos-head">
       <img
         v-bind:src="setUrlImageProfile(info.imageContent)"
         class="img-head-content"
         alt="รูปภาพเนื้อหา"
         style=" width: 100% "
       >
-    </div>
+    </div> -->
     <a
       v-show="info.idCategory == '4'"
       v-bind:href="setLink(info.fileEBookContent)"
@@ -74,7 +75,10 @@
     </a>
     <div class="container text-left-al font-size-old">
       <h1>{{info.nameContent}}</h1>
-
+       <div class="date-content-all">
+      <i class="far fa-calendar-alt"></i>      
+      {{ info.createTime | changeDateFilter}}
+    </div>
       <ckeditor
         type="classic"
         v-model="info.detailContent"
@@ -95,12 +99,21 @@ import globalUtil from "../common/globalUtil/index";
 import dataUtil from "../common/dataUtil/index";
 import storageUtil from "../common/storageUtil/index";
 import validateUtil from "../common/validateUtil/index";
+import VueMoment from "vue-moment";
+
+var moment = require("moment");
 
 export default {
   data() {
     return {
            info: {}
     };
+  },
+  filters: {
+    changeDateFilter: function(value) {
+      moment.locale("th");
+      return moment(value).format("llll");
+    }
   },
   mounted() {
     this.remaveMediaDropdownInCkEditor();

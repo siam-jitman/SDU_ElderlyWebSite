@@ -10,7 +10,8 @@ var URI_VIDEO = BASE_URL + "/public/video/";
 
 var URL_FIND_COTENT_BY_ID = URI_SERVICE + "content/findContentById";
 var URL_LIST_CONTENT = URI_SERVICE + "content/listContent";
-var URL_FIND_CONTENT_VIDEO = URL_FIND_CONTENT_VIDEO + "content/findContentVideo"
+var URL_FIND_CONTENT_VIDEO = URI_SERVICE + "content/findContentVideo";
+var URL_SEARCH_CONTENT = URI_SERVICE + "content/searchContent";
 
 export default {
   BASE_URL: BASE_URL,
@@ -21,7 +22,8 @@ export default {
   CONTENT: {
     URL_FIND_COTENT_BY_ID: URL_FIND_COTENT_BY_ID,
     URL_LIST_CONTENT: URL_LIST_CONTENT,
-    URL_FIND_CONTENT_VIDEO: URL_FIND_CONTENT_VIDEO
+    URL_FIND_CONTENT_VIDEO: URL_FIND_CONTENT_VIDEO,
+    URL_SEARCH_CONTENT: URL_SEARCH_CONTENT
 
   }
 };

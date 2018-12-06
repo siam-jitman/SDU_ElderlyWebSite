@@ -22,13 +22,8 @@
             </router-link>
           </li>
           <!-- search-popup -->
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="javascrip:void(0);"
-              data-toggle="modal"
-              data-target="#exampleModalCenter"
-            >ค้นหา</a>
+          <li class="nav-item">            
+            <router-link  class="nav-link" to="/ค้นหา">ค้นหา</router-link>
           </li>
           <!-- close-search-popup -->
           <li class="nav-item dropdown">
@@ -62,41 +57,7 @@
           </li>
         </ul>
       </div>
-    </nav>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="กรุณาใส่คำที่ต้องการค้นหา"
-            >
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-            <button type="button" class="btn btn-primary">
-              <i class="fas fa-search"></i> ค้นหา
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Close-Modal -->
+    </nav>    
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -164,10 +125,10 @@
     <div class="content-rec-video h1-resize">
       <h1>วีดีโอแนะนำ</h1>
       <div class="row marr-topp">
-        <!-- <div class="col-md-4" v-for="(video,index) in info" :key="index">
-          <img v-bind:src="setUrlImage(video.imageContent)">
-          <h2>{{item.nameContent}}</h2>
-        </div> -->
+        <div class="col-md-4" v-for="(items,index) in video" :key="index">
+          <img v-bind:src="setUrlImage(items.imageContent)">
+          <h2>{{items.nameContent}}</h2>
+        </div>           
       </div>
     </div>
     <div class="mar-top h1-resize">
@@ -223,7 +184,7 @@ import validateUtil from "../common/validateUtil/index";
 import VueMoment from "vue-moment";
 
 var moment = require("moment");
-export default {
+export default { 
   data() {
     return {
       imagesilde1:
@@ -250,24 +211,21 @@ export default {
     var bodyParams = {
       limit: 3
     };
-
     var call = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_LIST_CONTENT,
       bodyParams
     );
+    var callVideo = apiUtil.callService.doPost(
+      globalUtil.SERVICES.CONTENT.URL_FIND_CONTENT_VIDEO,
+      bodyParams
+    );   
 
     apiUtil.callService.validateResponse(
       call,
       function(response) {
         this.info = response.resultData;
       }.bind(this)
-    );
-    apiUtil.callService.validateResponse(
-      call,
-      function(response) {
-        this.video = response.resultData;
-      }.bind(this)
-    );
+    );       
   },
   methods: {
     clickContent(id, idCategory) {
@@ -286,7 +244,7 @@ export default {
     setUrlImage(name) {
       return globalUtil.SERVICES.URI_IMAGE_PROFILE + name;      
     }
-  }
+  }  
 };
 </script>
 

@@ -22,13 +22,8 @@
             </router-link>
           </li>
           <!-- search-popup -->
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="javascrip:void(0);"
-              data-toggle="modal"
-              data-target="#exampleModalCenter"
-            >ค้นหา</a>
+           <li class="nav-item">            
+            <router-link  class="nav-link" to="/ค้นหา">ค้นหา</router-link>
           </li>
           <!-- close-search-popup -->
           <li class="nav-item dropdown">
@@ -62,50 +57,19 @@
           </li>
         </ul>
       </div>
-    </nav>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="กรุณาใส่คำที่ต้องการค้นหา"
-            >
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-            <button type="button" class="btn btn-primary">
-              <i class="fas fa-search"></i> ค้นหา
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Close-Modal -->
+    </nav>   
     <div class="video-header-content">
-      <div class="embed-responsive embed-responsive-16by9">
-        <video controls autoplay class="video-w">
-          <source :src="setUrlVideo(info.urlContent)" type="video/mp4">
-        </video>
+      <div class="embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item" :src="setUrlVideo(info.urlContent)" allowfullscreen></iframe>
       </div>
-    </div>
+    </div>   
+
     <div class="container text-left-al font-size-old">
       <h1>{{info.nameContent}}</h1>
+      <div class="date-content-all">
+      <i class="far fa-calendar-alt"></i>      
+      {{ info.createTime | changeDateFilter}}
+    </div>
       <ckeditor
         type="classic"
         v-model="info.detailContent"
@@ -131,12 +95,21 @@ import globalUtil from "../common/globalUtil/index";
 import dataUtil from "../common/dataUtil/index";
 import storageUtil from "../common/storageUtil/index";
 import validateUtil from "../common/validateUtil/index";
+import VueMoment from "vue-moment";
+
+var moment = require("moment");
 
 export default {
   data() {
     return {
       info: {}
     };
+  },
+  filters: {
+    changeDateFilter: function(value) {
+      moment.locale("th");
+      return moment(value).format("llll");
+    }
   },
   mounted() {
     var bodyParams = {
