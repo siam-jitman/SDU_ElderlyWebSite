@@ -37,21 +37,15 @@
               aria-expanded="false"
             >หมวดหมู่</a>
             <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-              <router-link class="dropdown-item" to="/Animation">แอนิเมชั่น(Animation)</router-link>
-              <router-link class="dropdown-item" to="/Cartoon">การ์ตูน(Cartoon)</router-link>
-              <router-link class="dropdown-item" to="/Ebook">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
-              <router-link class="dropdown-item" to="/Infographics">อินโฟกราฟิก (Infographics)</router-link>
-              <router-link class="dropdown-item" to="/Motiongraphics">โมชั่นกราฟิก (Motiongraphics)</router-link>
-              <router-link
-                class="dropdown-item"
-                to="/Art"
-              >เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
-              <router-link class="dropdown-item" to="/VR">ความจริงเสมือน (Virtual reality)</router-link>
-              <router-link class="dropdown-item" to="/video">วีดิทัศน์ (Video)</router-link>
-              <router-link
-                class="dropdown-item"
-                to="/Dimage"
-              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+             <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 1  } }" class="dropdown-item">แอนิเมชั่น(Animation)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 2  } }" class="dropdown-item">การ์ตูน(Cartoon)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 4  } }" class="dropdown-item">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 5  } }" class="dropdown-item">อินโฟกราฟิก (Infographics)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 7  } }" class="dropdown-item">โมชั่นกราฟิก (Motiongraphics)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 6  } }" class="dropdown-item">เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 7  } }" class="dropdown-item">ความจริงเสมือน (Virtual reality)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }" class="dropdown-item">วีดิทัศน์ (Video)</router-link>
+              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }" class="dropdown-item">ภาพมุมมองสามมิติ (3D perspective image)</router-link>
               <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
             </div>
           </li>
@@ -87,10 +81,7 @@
             </div>
           </div>
     </div>
-    </div>
-    
-             
-   
+    </div>  
     <footer>
       <h4 style="font-size: 18px;">Copyright © 2018</h4>
     </footer>

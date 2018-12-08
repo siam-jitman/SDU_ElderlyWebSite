@@ -373,9 +373,28 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;  
 }
+.cur{
+  cursor: pointer;
+}
+.line-dropdown-list{
+  color: #333 !important;
+  border-bottom: 1px solid #ccc4c4;
+  padding: 10px 15px !important;
+}
+
 
 @media (max-width: 991px) {
   .dropdown-menu:before {
     display: none;
+  }
+}
+@media (max-width: 480px) {
+  .container-w{
+    padding: 15px 35px !important;
+ }
+}
+@media (max-width: 351px) {
+  .card-text{
+    display: none !important;
   }
 }

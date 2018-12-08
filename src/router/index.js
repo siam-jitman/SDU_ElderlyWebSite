@@ -13,8 +13,10 @@ import Cartoon from '@/components/cartoon_page'
 import Animation from '@/components/animation_page'
 import ContentVideo from '@/components/video_content_page'
 import Search from '@/components/search'
+import AllContent from '@/components/all_content'
 Vue.use(Router)
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -80,6 +82,11 @@ export default new Router({
       path: '/ค้นหา',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/AllContent/:idCategory',
+      name: 'AllContent',
+      component: AllContent
     }
   ]
 })

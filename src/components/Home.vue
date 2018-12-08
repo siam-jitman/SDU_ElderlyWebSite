@@ -37,21 +37,15 @@
               aria-expanded="false"
             >หมวดหมู่</a>
             <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-              <router-link class="dropdown-item" to="/Animation">แอนิเมชั่น(Animation)</router-link>
-              <router-link class="dropdown-item" to="/Cartoon">การ์ตูน(Cartoon)</router-link>
-              <router-link class="dropdown-item" to="/Ebook">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
-              <router-link class="dropdown-item" to="/Infographics">อินโฟกราฟิก (Infographics)</router-link>
-              <router-link class="dropdown-item" to="/Motiongraphics">โมชั่นกราฟิก (Motiongraphics)</router-link>
-              <router-link
-                class="dropdown-item"
-                to="/Art"
-              >เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
-              <router-link class="dropdown-item" to="/VR">ความจริงเสมือน (Virtual reality)</router-link>
-              <router-link class="dropdown-item" to="/video">วีดิทัศน์ (Video)</router-link>
-              <router-link
-                class="dropdown-item"
-                to="/Dimage"
-              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 1  } }" class="dropdown-item">แอนิเมชั่น(Animation)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 2  } }" class="dropdown-item">การ์ตูน(Cartoon)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 4  } }" class="dropdown-item">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 5  } }" class="dropdown-item">อินโฟกราฟิก (Infographics)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 7  } }" class="dropdown-item">โมชั่นกราฟิก (Motiongraphics)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 6  } }" class="dropdown-item">เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 7  } }" class="dropdown-item">ความจริงเสมือน (Virtual reality)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 8  } }" class="dropdown-item">วีดิทัศน์ (Video)</router-link>
+              <router-link :to="{ name: 'AllContent', params: {  idCategory: 9  } }" class="dropdown-item">ภาพมุมมองสามมิติ (3D perspective image)</router-link>
               <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
             </div>
           </li>
@@ -126,8 +120,17 @@
       <h1>วีดีโอแนะนำ</h1>
       <div class="row marr-topp">
         <div class="col-md-4" v-for="(items,index) in video" :key="index">
+          <div class="cards">
+          <router-link :to="{ name: 'ContentVideo', params: { idContent: items.idContent } }" class="a-link-ro">
+            <div class="hover-video-content">
           <img v-bind:src="setUrlImage(items.imageContent)">
+          <div class="middle">
+    <div class="icon-play"><i class="fas fa-play-circle"></i></div>
+  </div>
+          </div>
           <h2>{{items.nameContent}}</h2>
+          </router-link>
+          </div>
         </div>           
       </div>
     </div>
@@ -135,36 +138,13 @@
       <h1>รูปภาพกิจกรรม</h1>
       <div class="container-w">
         <div class="row">
-          <div class="col-md-4" style="margin-bottom: 25px;">
+          <div class="col-md-4" style="margin-bottom: 25px;"  v-for="(itemsim,index) in images" :key="index">
             <div class="hover-image-zoom">
-              <img v-bind:src="imageLink1">
+              <img v-bind:src="setUrlImage(itemsim.imageContent)">              
             </div>
+            <h2>{{itemsim.nameContent}}</h2>
           </div>
-          <div class="col-md-4" style="margin-bottom: 25px;">
-            <div class="hover-image-zoom">
-              <img v-bind:src="imageLink2">
-            </div>
-          </div>
-          <div class="col-md-4" style="margin-bottom: 25px;">
-            <div class="hover-image-zoom">
-              <img v-bind:src="imageLink1">
-            </div>
-          </div>
-          <div class="col-md-4" style="margin-bottom: 25px;">
-            <div class="hover-image-zoom">
-              <img v-bind:src="imageLink2">
-            </div>
-          </div>
-          <div class="col-md-4" style="margin-bottom: 25px;">
-            <div class="hover-image-zoom">
-              <img v-bind:src="imageLink1">
-            </div>
-          </div>
-          <div class="col-md-4" style="margin-bottom: 25px;">
-            <div class="hover-image-zoom">
-              <img v-bind:src="imageLink2">
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -198,7 +178,8 @@ export default {
       imageLink2:
         "https://natgeo.imgix.net/factsheets/thumbnails/Ulurugoogle.jpg?auto=compress,format&w=1024&h=560&fit=crop",
       info: [],
-      video:[]
+      video: [],
+      images: []
     };
   },
   filters: {
@@ -214,18 +195,33 @@ export default {
     var call = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_LIST_CONTENT,
       bodyParams
-    );
-    var callVideo = apiUtil.callService.doPost(
+    )  
+    var callvideo = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_FIND_CONTENT_VIDEO,
-      bodyParams
-    );   
+      bodyParams)
+
+       var callimage = apiUtil.callService.doPost(
+      globalUtil.SERVICES.CONTENT.URL_FIND_CONTENT_IMAGE,
+      bodyParams)
 
     apiUtil.callService.validateResponse(
       call,
       function(response) {
         this.info = response.resultData;
       }.bind(this)
-    );       
+    ); 
+    apiUtil.callService.validateResponse(
+      callvideo,
+      function(response) {
+        this.video = response.resultData;
+      }.bind(this)
+    ); 
+    apiUtil.callService.validateResponse(
+      callimage,
+      function(response) {
+        this.images = response.resultData;
+      }.bind(this)
+    );     
   },
   methods: {
     clickContent(id, idCategory) {
