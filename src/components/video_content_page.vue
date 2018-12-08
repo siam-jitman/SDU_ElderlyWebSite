@@ -1,7 +1,7 @@
 <template>
   <div id="callaxois">
     <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -54,7 +54,8 @@
     </nav>   
     <div class="video-header-content">
       <div class="embed-responsive embed-responsive-21by9">
-        <iframe class="embed-responsive-item" :src="setUrlVideo(info.urlContent)" allowfullscreen></iframe>
+        <!-- <iframe class="embed-responsive-item" :src="setUrlVideo(info.urlContent)" allowfullscreen></iframe> -->
+        <iframe width="560" height="315" :src="setUrlVideo(info.urlContent)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>   
 
@@ -124,7 +125,8 @@ export default {
   },
   methods: {
     setUrlVideo(url) {
-      return globalUtil.SERVICES.URI_VIDEO + url;
+      // return globalUtil.SERVICES.URI_VIDEO + url;
+      return "https://www.youtube.com/embed/" + url.split("=")[1]+"?autoplay=1";
     }
   }
 };

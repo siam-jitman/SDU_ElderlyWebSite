@@ -1,7 +1,7 @@
 <template>
   <div id="callaxois">
     <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -51,6 +51,7 @@
       </div>
     </nav>
      <div class="container">
+       <div class="marr-top-all-content">
         <div class="row">
           <div class="col-md-4" v-for="(items,index) in info" :key="index">
             <div class="card" style="width: auto;">
@@ -74,7 +75,8 @@
             </div>
           </div>
         </div>
-      </div>    
+      </div> 
+      </div>   
     <footer>
       <h4 style="font-size: 18px;">Copyright © 2018</h4>
     </footer>

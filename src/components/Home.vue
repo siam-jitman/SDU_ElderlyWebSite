@@ -1,7 +1,7 @@
 <template>
   <div id="callaxois">
-    <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#">LOGO</a>
+    <nav id="global-nav" class="navbar navbar-expand-lg navbar-light tran-bg">
+      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -22,8 +22,8 @@
             </router-link>
           </li>
           <!-- search-popup -->
-          <li class="nav-item">            
-            <router-link  class="nav-link" to="/ค้นหา">ค้นหา</router-link>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/ค้นหา">ค้นหา</router-link>
           </li>
           <!-- close-search-popup -->
           <li class="nav-item dropdown">
@@ -37,21 +37,48 @@
               aria-expanded="false"
             >หมวดหมู่</a>
             <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 1  } }" class="dropdown-item">แอนิเมชั่น(Animation)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 2  } }" class="dropdown-item">การ์ตูน(Cartoon)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 4  } }" class="dropdown-item">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 5  } }" class="dropdown-item">อินโฟกราฟิก (Infographics)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 7  } }" class="dropdown-item">โมชั่นกราฟิก (Motiongraphics)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 6  } }" class="dropdown-item">เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 7  } }" class="dropdown-item">ความจริงเสมือน (Virtual reality)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 8  } }" class="dropdown-item">วีดิทัศน์ (Video)</router-link>
-              <router-link :to="{ name: 'AllContent', params: {  idCategory: 9  } }" class="dropdown-item">ภาพมุมมองสามมิติ (3D perspective image)</router-link>
-              <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 1  } }"
+                class="dropdown-item"
+              >แอนิเมชั่น(Animation)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 2  } }"
+                class="dropdown-item"
+              >การ์ตูน(Cartoon)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 4  } }"
+                class="dropdown-item"
+              >หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 5  } }"
+                class="dropdown-item"
+              >อินโฟกราฟิก (Infographics)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 7  } }"
+                class="dropdown-item"
+              >โมชั่นกราฟิก (Motiongraphics)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 6  } }"
+                class="dropdown-item"
+              >เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 7  } }"
+                class="dropdown-item"
+              >ความจริงเสมือน (Virtual reality)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 8  } }"
+                class="dropdown-item"
+              >วีดิทัศน์ (Video)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  idCategory: 9  } }"
+                class="dropdown-item"
+              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+              <a class="dropdown-item none-display-link" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
             </div>
           </li>
         </ul>
       </div>
-    </nav>    
+    </nav>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -60,13 +87,13 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100 h-450" v-bind:src="imagesilde1" alt="First slide">
+          <img class="d-block w-100 h-450" src="../assets/slide2.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 h-450" v-bind:src="imagesilde2" alt="Second slide">
+          <img class="d-block w-100 h-450" src="../assets/slide3.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 h-450" v-bind:src="imagesilde3" alt="Third slide">
+          <img class="d-block w-100 h-450" src="../assets/slide4.jpg" alt="Third slide">
         </div>
       </div>
       <a
@@ -107,8 +134,9 @@
                 </p>
                 <p class="card-text">{{item.scriptContent}}</p>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-primary btn-center"
                   @click.stop.prevent="clickContent(item.idContent,item.idCategory)"
+                  v-bind:title="item.nameContent"
                 >อ่านเพิ่มเติม</button>
               </div>
             </div>
@@ -120,31 +148,54 @@
       <h1>วีดีโอแนะนำ</h1>
       <div class="row marr-topp">
         <div class="col-md-4" v-for="(items,index) in video" :key="index">
-          <div class="cards">
-          <router-link :to="{ name: 'ContentVideo', params: { idContent: items.idContent } }" class="a-link-ro">
-            <div class="hover-video-content">
-          <img v-bind:src="setUrlImage(items.imageContent)">
-          <div class="middle">
-    <div class="icon-play"><i class="fas fa-play-circle"></i></div>
-  </div>
+          <div class="cards marr-zio">
+            <router-link
+              :to="{ name: 'ContentVideo', params: { idContent: items.idContent } }"
+              class="a-link-ro"
+              v-bind:title="items.nameContent"
+            >
+              <div class="hover-video-content">
+                <img v-bind:src="setUrlImage(items.imageContent)">
+                <div class="middle">
+                  <div class="icon-play">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+              </div>
+              <h5 class="card-title">{{items.nameContent}}</h5>
+            </router-link>
           </div>
-          <h2>{{items.nameContent}}</h2>
-          </router-link>
-          </div>
-        </div>           
+        </div>
       </div>
     </div>
     <div class="mar-top h1-resize">
       <h1>รูปภาพกิจกรรม</h1>
       <div class="container-w">
         <div class="row">
-          <div class="col-md-4" style="margin-bottom: 25px;"  v-for="(itemsim,index) in images" :key="index">
-            <div class="hover-image-zoom">
-              <img v-bind:src="setUrlImage(itemsim.imageContent)">              
-            </div>
-            <h2>{{itemsim.nameContent}}</h2>
+          <div
+            class="col-md-4"
+            style="margin-bottom: 25px;"
+            v-for="(itemsim,index) in images"
+            :key="index"
+          >
+            <router-link
+              :to="{ name: 'content', params: { idContent: itemsim.idContent } }"
+              v-bind:title="itemsim.nameContent"
+            >
+              <div class="on-title-image">
+                <div class="hover-image-zoom">
+                  <img v-bind:src="setUrlImage(itemsim.imageContent)">
+                </div>
+                <div class="media__content">
+                  <h5>{{itemsim.nameContent}}</h5>
+                  <div class="date-content-on-image">
+                    <i class="far fa-calendar-alt"></i>
+                    {{ itemsim.createTime | changeDateFilter}}
+                  </div>
+                </div>
+              </div>
+            </router-link>
           </div>
-          
         </div>
       </div>
     </div>
@@ -162,22 +213,12 @@ import dataUtil from "../common/dataUtil/index";
 import storageUtil from "../common/storageUtil/index";
 import validateUtil from "../common/validateUtil/index";
 import VueMoment from "vue-moment";
+import "../assets/css/style.css";
 
 var moment = require("moment");
-export default { 
+export default {
   data() {
     return {
-      imagesilde1:
-        "https://images.pexels.com/photos/995939/pexels-photo-995939.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      imagesilde2:
-        "https://images.pexels.com/photos/913215/pexels-photo-913215.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      imagesilde3:
-        "https://images.pexels.com/photos/995939/pexels-photo-995939.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      imageLink1:
-        "https://natgeo.imgix.net/factsheets/thumbnails/Ulurugoogle.jpg?auto=compress,format&w=1024&h=560&fit=crop",
-      imageLink2:
-        "https://natgeo.imgix.net/factsheets/thumbnails/Ulurugoogle.jpg?auto=compress,format&w=1024&h=560&fit=crop",
-      info: [],
       video: [],
       images: []
     };
@@ -192,36 +233,42 @@ export default {
     var bodyParams = {
       limit: 3
     };
+    var bodyParamslimit = {
+      limit: 6
+    };
+
     var call = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_LIST_CONTENT,
       bodyParams
-    )  
+    );
     var callvideo = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_FIND_CONTENT_VIDEO,
-      bodyParams)
+      bodyParams
+    );
 
-       var callimage = apiUtil.callService.doPost(
+    var callimage = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_FIND_CONTENT_IMAGE,
-      bodyParams)
+      bodyParamslimit
+    );
 
     apiUtil.callService.validateResponse(
       call,
       function(response) {
         this.info = response.resultData;
       }.bind(this)
-    ); 
+    );
     apiUtil.callService.validateResponse(
       callvideo,
       function(response) {
         this.video = response.resultData;
       }.bind(this)
-    ); 
+    );
     apiUtil.callService.validateResponse(
       callimage,
       function(response) {
         this.images = response.resultData;
       }.bind(this)
-    );     
+    );
   },
   methods: {
     clickContent(id, idCategory) {
@@ -238,14 +285,30 @@ export default {
       }
     },
     setUrlImage(name) {
-      return globalUtil.SERVICES.URI_IMAGE_PROFILE + name;      
+      return globalUtil.SERVICES.URI_IMAGE_PROFILE + name;
     }
-  }  
+  }
 };
+// navigation-menu
+$(document).ready(function(){
+  var scrollTop = 0;
+  $(window).scroll(function(){
+    scrollTop = $(window).scrollTop();
+     $('.counter').html(scrollTop);
+    
+    if (scrollTop >= 100) {
+      $('#global-nav').addClass('scrolled-nav');
+    } else if (scrollTop < 100) {
+      $('#global-nav').removeClass('scrolled-nav');
+    } 
+    
+  }); 
+  
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 h1,
 h2 {
   font-weight: normal;
@@ -293,13 +356,17 @@ nav ul li a:hover {
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
 }
 nav ul li a {
-  padding: 1.5rem 1rem !important;
+    padding: 8px 1rem !important;
 }
 nav ul li {
   font-size: 21px;
 }
 .active {
-  background-color: #84a5ff;
+    background-color: transparent !important;
+    font-weight: bold;   
+}
+.active a{
+      color: #74e152 !important;
 }
 /* .h-450{
   height: 450px;

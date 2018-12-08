@@ -1,7 +1,7 @@
 <template>
   <div id="callaxois">
     <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
       <button
         class="navbar-toggler"
         type="button"

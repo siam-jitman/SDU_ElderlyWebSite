@@ -1,7 +1,7 @@
 <template>
   <div id="callaxois">
     <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -74,7 +74,7 @@
                 </p>
                 <p class="card-text">{{item.scriptContent}}</p>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-primary btn-center"
                   @click.stop.prevent="clickContent(item.idContent,item.idCategory)"
                 >อ่านเพิ่มเติม</button>
               </div>
@@ -145,7 +145,7 @@ export default {
   computed:{
 filteredContent: function(){
   return this.info.filter((item)=>{
-    return item.nameContent.match(this.search);
+    return item.nameContent.toLowerCase().includes(this.search.toLowerCase())
   })
 }
   } 
