@@ -1,5 +1,6 @@
 <template>
   <div id="callaxois">
+   
     <nav id="global-nav" class="navbar navbar-expand-lg navbar-light tran-bg">
       <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
       <button
@@ -38,41 +39,26 @@
             >หมวดหมู่</a>
             <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
               <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 1  } }"
-                class="dropdown-item"
-              >แอนิเมชั่น(Animation)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 2  } }"
-                class="dropdown-item"
-              >การ์ตูน(Cartoon)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 4  } }"
-                class="dropdown-item"
-              >หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 5  } }"
-                class="dropdown-item"
-              >อินโฟกราฟิก (Infographics)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 7  } }"
-                class="dropdown-item"
-              >โมชั่นกราฟิก (Motiongraphics)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 6  } }"
-                class="dropdown-item"
-              >เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 7  } }"
-                class="dropdown-item"
-              >ความจริงเสมือน (Virtual reality)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 8  } }"
+                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
                 class="dropdown-item"
               >วีดิทัศน์ (Video)</router-link>
               <router-link
-                :to="{ name: 'AllContent', params: {  idCategory: 9  } }"
+                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
                 class="dropdown-item"
               >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
+                class="dropdown-item"
+              >ภาพเขียน (Drawing picture)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
+                class="dropdown-item"
+              >ภาพนิ่ง (Slides)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
+                class="dropdown-item"
+              >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>                    
+              
               <a class="dropdown-item none-display-link" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
             </div>
           </li>
@@ -168,7 +154,7 @@
         </div>
       </div>
     </div>
-    <div class="mar-top h1-resize">
+    <div class="mar-top h1-resize bt-footet-fix">
       <h1>รูปภาพกิจกรรม</h1>
       <div class="container-w">
         <div class="row">
@@ -200,7 +186,7 @@
       </div>
     </div>
     <footer>
-      <h4 style="font-size: 18px;">Copyright © 2018</h4>
+      <h4 style="font-size: 18px;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยสวนดุสิต</h4>
     </footer>
   </div>
 </template>
@@ -214,6 +200,7 @@ import storageUtil from "../common/storageUtil/index";
 import validateUtil from "../common/validateUtil/index";
 import VueMoment from "vue-moment";
 import "../assets/css/style.css";
+import "../assets/js/navigationbar.js";
 
 var moment = require("moment");
 export default {
@@ -289,22 +276,7 @@ export default {
     }
   }
 };
-// navigation-menu
-$(document).ready(function(){
-  var scrollTop = 0;
-  $(window).scroll(function(){
-    scrollTop = $(window).scrollTop();
-     $('.counter').html(scrollTop);
-    
-    if (scrollTop >= 100) {
-      $('#global-nav').addClass('scrolled-nav');
-    } else if (scrollTop < 100) {
-      $('#global-nav').removeClass('scrolled-nav');
-    } 
-    
-  }); 
-  
-});
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,3 +1,4 @@
+@import "../css/custom_page.less";
 h1,
 h2 {
   font-weight: normal;
@@ -523,6 +524,10 @@ nav ul li:hover {
 .marr-top-all-content{
   margin-top: 65px;
 }
+.bt-footet-fix{
+  margin-bottom: 80px;
+}
+
 
 @media (max-width: 992px) {
   .dropdown-menu:before {
@@ -531,6 +536,27 @@ nav ul li:hover {
   .none-display-link{
     display: none;
   }
+  .tran-bg{
+    padding-top: 0;
+    padding-bottom: 0;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #648dff !important;
+    padding: 8px;
+    transition: all .3s;
+  }
+  .navbar-light .navbar-toggler {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+.embed-responsive embed-responsive-21by9{
+  height: 395px !important;
+}
+.embed-responsive{
+  height: 400px !important;
+}
 }
 @media (max-width: 480px) {
   .container-w{

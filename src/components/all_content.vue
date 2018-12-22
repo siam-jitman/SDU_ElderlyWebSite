@@ -35,22 +35,18 @@
               aria-expanded="false"
             >หมวดหมู่</a>
             <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-              <div @click.stop.prevent="clickdropdowncontentlist(1)" class="dropdown-item cur line-dropdown-list">แอนิเมชั่น(Animation)</div>
-              <div @click.stop.prevent="clickdropdowncontentlist(2)" class="dropdown-item cur line-dropdown-list">การ์ตูน(Cartoon)</div>
-              <div @click.stop.prevent="clickdropdowncontentlist(4)" class="dropdown-item cur line-dropdown-list">หนังสืออิเล็กทรอนิกส์(Electronic book)</div>
-              <div @click.stop.prevent="clickdropdowncontentlist(5)" class="dropdown-item cur line-dropdown-list">อินโฟกราฟิก (Infographics)</div>
-              <div @click.stop.prevent="clickdropdowncontentlist(7)" class="dropdown-item cur line-dropdown-list">โมชั่นกราฟิก (Motiongraphics)</div>
-              <div @click.stop.prevent="clickdropdowncontentlist(6)" class="dropdown-item cur line-dropdown-list">เทคโนโลยีเออาร์ (Augmentation Reality Technology)</div>
-              <div @click.stop.prevent="clickdropdowncontentlist(7)" class="dropdown-item cur line-dropdown-list">ความจริงเสมือน (Virtual reality)</div>
               <div @click.stop.prevent="clickdropdowncontentlist(8)" class="dropdown-item cur line-dropdown-list">วีดิทัศน์ (Video)</div>
               <div @click.stop.prevent="clickdropdowncontentlist(9)" class="dropdown-item cur line-dropdown-list">ภาพมุมมองสามมิติ (3D perspective image)</div>
+              <div @click.stop.prevent="clickdropdowncontentlist(1)" class="dropdown-item cur line-dropdown-list">ภาพเขียน (Drawing picture)</div>
+              <div @click.stop.prevent="clickdropdowncontentlist(2)" class="dropdown-item cur line-dropdown-list">ภาพนิ่ง (Slides)</div>
+              <div @click.stop.prevent="clickdropdowncontentlist(4)" class="dropdown-item cur line-dropdown-list">หนังสืออิเล็กทรอนิกส์(Electronic book)</div> 
               <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
             </div>
           </li>
         </ul>
       </div>
     </nav>
-     <div class="container">
+     <div class="container bt-footet-fix">
        <div class="marr-top-all-content">
         <div class="row">
           <div class="col-md-4" v-for="(items,index) in info" :key="index">
@@ -78,7 +74,7 @@
       </div> 
       </div>   
     <footer>
-      <h4 style="font-size: 18px;">Copyright © 2018</h4>
+      <h4 style="font-size: 18px;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยสวนดุสิต</h4>
     </footer>
   </div>
 </template>
@@ -109,16 +105,13 @@ export default {
   mounted() {
     this.callSearchContent()
   },
-  methods: {
-      
+  methods: {     
 
-      callSearchContent(value){
-        
+      callSearchContent(value){        
       var bodyParams = {
       limit: 2000,
       nameContent: "",
       idCategory: value == undefined ? this.$route.params.idCategory : value
-
     };
     var call = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_SEARCH_CONTENT,

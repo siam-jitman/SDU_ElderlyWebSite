@@ -37,15 +37,26 @@
               aria-expanded="false"
             >หมวดหมู่</a>
             <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-             <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 1  } }" class="dropdown-item">แอนิเมชั่น(Animation)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 2  } }" class="dropdown-item">การ์ตูน(Cartoon)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 4  } }" class="dropdown-item">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 5  } }" class="dropdown-item">อินโฟกราฟิก (Infographics)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 7  } }" class="dropdown-item">โมชั่นกราฟิก (Motiongraphics)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 6  } }" class="dropdown-item">เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 7  } }" class="dropdown-item">ความจริงเสมือน (Virtual reality)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }" class="dropdown-item">วีดิทัศน์ (Video)</router-link>
-              <router-link :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }" class="dropdown-item">ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+             <router-link
+                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
+                class="dropdown-item"
+              >วีดิทัศน์ (Video)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
+                class="dropdown-item"
+              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
+                class="dropdown-item"
+              >ภาพเขียน (Drawing picture)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
+                class="dropdown-item"
+              >ภาพนิ่ง (Slides)</router-link>
+              <router-link
+                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
+                class="dropdown-item"
+              >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link> 
               <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
             </div>
           </li>
@@ -55,7 +66,7 @@
     <div class="h1-search-header">
        <h1><i class="fas fa-search"></i> ค้นหา</h1>
     </div>       
-    <div class="container">
+    <div class="container bt-footet-fix">
       <input type="text" class="form-control search-content" id="exampleFormControlInput1" placeholder="กรุณาใส่คำที่ต้องการค้นหา" v-model="search">
       
 <div class="row">
@@ -83,7 +94,7 @@
     </div>
     </div>  
     <footer>
-      <h4 style="font-size: 18px;">Copyright © 2018</h4>
+      <h4 style="font-size: 18px;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยสวนดุสิต</h4>
     </footer>
   </div>
 </template>
@@ -258,6 +269,9 @@ footer {
   color: #fff;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+      position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 .color-fff-nav a {
   color: #333 !important;
