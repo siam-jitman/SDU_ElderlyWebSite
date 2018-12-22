@@ -1,92 +1,139 @@
 <template>
   <div id="callaxois">
-    <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mar-left">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">
-              หน้าหลัก
-              <span class="sr-only">(current)</span>
-            </router-link>
-          </li>
-          <!-- search-popup -->
-           <li class="nav-item">            
-            <router-link  class="nav-link" to="/ค้นหา">ค้นหา</router-link>
-          </li>
-          <!-- close-search-popup -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="javascrip:void(0);"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >หมวดหมู่</a>
-            <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
+    <div class="main-content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
+        <a
+          class="navbar-brand"
+          href="#"
+        ><img
+            src="http://tayaitourism.com/public/image/logo/logo.png"
+            alt="tayaitourism"
+            class="img-logo"
+          ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mar-left">
+            <li class="nav-item">
               <router-link
-                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
-                class="dropdown-item"
-              >วีดิทัศน์ (Video)</router-link>
+                class="nav-link"
+                to="/"
+              >
+                หน้าหลัก
+                <span class="sr-only">(current)</span>
+              </router-link>
+            </li>
+            <!-- search-popup -->
+            <li class="nav-item">
               <router-link
-                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
-                class="dropdown-item"
-              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
-                class="dropdown-item"
-              >ภาพเขียน (Drawing picture)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
-                class="dropdown-item"
-              >ภาพนิ่ง (Slides)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
-                class="dropdown-item"
-              >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link> 
-              <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
-            </div>
-          </li>
-        </ul>
+                class="nav-link"
+                to="/ค้นหา"
+              >ค้นหา</router-link>
+            </li>
+            <!-- close-search-popup -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="javascrip:void(0);"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >หมวดหมู่</a>
+              <div
+                class="dropdown-menu color-fff-nav"
+                aria-labelledby="navbarDropdown"
+              >
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
+                  class="dropdown-item"
+                >ภาพนิ่ง (Slides)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
+                  class="dropdown-item"
+                >วีดิทัศน์ (Video)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 3  } }"
+                  class="dropdown-item"
+                >ภาพเขียน (Drawing picture)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
+                  class="dropdown-item"
+                >ภาพเคลื่อนไหว 2 มิติ (2D Animation)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 6  } }"
+                  class="dropdown-item"
+                >ภาพเคลื่อนไหว 3 มิติ (3D Animation)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 5  } }"
+                  class="dropdown-item"
+                >อินโฟกราฟิก (Infographics)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 7  } }"
+                  class="dropdown-item"
+                >โมชั่นกราฟิก (Motiongraphics)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
+                  class="dropdown-item"
+                >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
+                  class="dropdown-item"
+                >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>
+                <a
+                  class="dropdown-item"
+                  href="http://tayaitourism.com/admin/"
+                >เข้าสู่ระบบ</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="video-header-content">
+        <div class="embed-responsive embed-responsive-21by9">
+          <!-- <iframe class="embed-responsive-item" :src="setUrlVideo(info.urlContent)" allowfullscreen></iframe> -->
+          <iframe
+            width="560"
+            height="315"
+            :src="setUrlVideo(info.urlContent)"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
-    </nav>   
-    <div class="video-header-content">
-      <div class="embed-responsive embed-responsive-21by9">
-        <!-- <iframe class="embed-responsive-item" :src="setUrlVideo(info.urlContent)" allowfullscreen></iframe> -->
-        <iframe width="560" height="315" :src="setUrlVideo(info.urlContent)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>   
 
-    <div class="container text-left-al font-size-old bt-footet-fix">
-      <h1>{{info.nameContent}}</h1>
-      <div class="date-content-all">
-      <i class="far fa-calendar-alt"></i>      
-      {{ info.createTime | changeDateFilter}}
-    </div>
-      <ckeditor
-        type="classic"
-        v-model="info.detailContent"
-        id="ck-create-update-content"
-        :readonly="true"
-      ></ckeditor>
-      <!-- <div class="embed-responsive embed-responsive-16by9">
+      <div class="container text-left-al font-size-old bt-footet-fix">
+        <h1>{{info.nameContent}}</h1>
+        <div class="date-content-all">
+          <i class="far fa-calendar-alt"></i>
+          {{ info.createTime | changeDateFilter}}
+        </div>
+        <ckeditor
+          type="classic"
+          v-model="info.detailContent"
+          id="ck-create-update-content"
+          :readonly="true"
+        ></ckeditor>
+        <!-- <div class="embed-responsive embed-responsive-16by9">
         <video controls autoplay class="video-w">
           <source :src="setUrlVideo(info.urlContent)" type="video/mp4">
         </video>
       </div>-->
+      </div>
     </div>
     <footer>
       <h4 style="font-size: 18px;">Copyright © 2018</h4>
@@ -118,6 +165,8 @@ export default {
     }
   },
   mounted() {
+    window.scrollTo(0, 0);
+
     var bodyParams = {
       idContent: this.$route.params.idContent
     };
@@ -137,7 +186,9 @@ export default {
   methods: {
     setUrlVideo(url) {
       // return globalUtil.SERVICES.URI_VIDEO + url;
-      return "https://www.youtube.com/embed/" + url.split("=")[1]+"?autoplay=1";
+      return (
+        "https://www.youtube.com/embed/" + url.split("=")[1] + "?autoplay=1"
+      );
     }
   }
 };

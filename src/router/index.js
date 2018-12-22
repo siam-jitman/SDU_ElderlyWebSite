@@ -13,7 +13,6 @@ import Search from '@/components/search'
 import AllContent from '@/components/all_content'
 Vue.use(Router)
 export default new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',

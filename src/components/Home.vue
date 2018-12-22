@@ -1,186 +1,277 @@
 <template>
   <div id="callaxois">
-   
-    <nav id="global-nav" class="navbar navbar-expand-lg navbar-light tran-bg">
-      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+    <div class="main-content">
+      <nav
+        id="global-nav"
+        class="navbar navbar-expand-lg navbar-light tran-bg"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mar-left">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">
-              หน้าหลัก
-              <span class="sr-only">(current)</span>
-            </router-link>
-          </li>
-          <!-- search-popup -->
-          <li class="nav-item">
-            <router-link class="nav-link" to="/ค้นหา">ค้นหา</router-link>
-          </li>
-          <!-- close-search-popup -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="javascrip:void(0);"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >หมวดหมู่</a>
-            <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
+        <a
+          class="navbar-brand"
+          href="#"
+        ><img
+            src="http://tayaitourism.com/public/image/logo/logo.png"
+            alt="tayaitourism"
+            class="img-logo"
+          ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mar-left">
+            <li class="nav-item active">
               <router-link
-                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
-                class="dropdown-item"
-              >วีดิทัศน์ (Video)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
-                class="dropdown-item"
-              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
-                class="dropdown-item"
-              >ภาพเขียน (Drawing picture)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
-                class="dropdown-item"
-              >ภาพนิ่ง (Slides)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
-                class="dropdown-item"
-              >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>                    
-              
-              <a class="dropdown-item none-display-link" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100 h-450" src="../assets/slide2.jpg" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100 h-450" src="../assets/slide3.jpg" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100 h-450" src="../assets/slide4.jpg" alt="Third slide">
-        </div>
-      </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    <div class="mar-top h1-resize">
-      <h1>เรื่องล่าสุด</h1>
-      <div class="container-w">
-        <div class="row">
-          <div class="col-md-4" v-for="(item,index) in info" :key="index">
-            <div class="card" style="width: auto;">
-              <img
-                v-bind:src="setUrlImage(item.imageContent)"
-                class="card-img-top"
-                alt="Card image cap"
+                class="nav-link"
+                to="/"
               >
-              <div class="card-body">
-                <h5 class="card-title">{{item.nameContent}}</h5>
-                <p class="date-card">
-                  <i class="far fa-calendar-alt"></i>
-                  {{ item.createTime | changeDateFilter}}
-                </p>
-                <p class="card-text">{{item.scriptContent}}</p>
-                <button
-                  class="btn btn-primary btn-center"
-                  @click.stop.prevent="clickContent(item.idContent,item.idCategory)"
-                  v-bind:title="item.nameContent"
-                >อ่านเพิ่มเติม</button>
+                หน้าหลัก
+                <span class="sr-only">(current)</span>
+              </router-link>
+            </li>
+            <!-- search-popup -->
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                to="/ค้นหา"
+              >ค้นหา</router-link>
+            </li>
+            <!-- close-search-popup -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="javascrip:void(0);"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >หมวดหมู่</a>
+              <div
+                class="dropdown-menu color-fff-nav"
+                aria-labelledby="navbarDropdown"
+              >
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
+                  class="dropdown-item"
+                >ภาพนิ่ง (Slides)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
+                  class="dropdown-item"
+                >วีดิทัศน์ (Video)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 3  } }"
+                  class="dropdown-item"
+                >ภาพเขียน (Drawing picture)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
+                  class="dropdown-item"
+                >ภาพเคลื่อนไหว 2 มิติ (2D Animation)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 6  } }"
+                  class="dropdown-item"
+                >ภาพเคลื่อนไหว 3 มิติ (3D Animation)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 5  } }"
+                  class="dropdown-item"
+                >อินโฟกราฟิก (Infographics)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 7  } }"
+                  class="dropdown-item"
+                >โมชั่นกราฟิก (Motiongraphics)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
+                  class="dropdown-item"
+                >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
+                  class="dropdown-item"
+                >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>
+                <a
+                  class="dropdown-item"
+                  href="http://tayaitourism.com/admin/"
+                >เข้าสู่ระบบ</a>
               </div>
-            </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="1"
+          ></li>
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="2"
+          ></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100 h-450"
+              src="../assets/slide1.jpg"
+              alt="First slide"
+            >
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100 h-450"
+              src="../assets/slide2.jpg"
+              alt="First slide"
+            >
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100 h-450"
+              src="../assets/slide3.jpg"
+              alt="Second slide"
+            >
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100 h-450"
+              src="../assets/slide4.jpg"
+              alt="Third slide"
+            >
           </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-    </div>
-    <div class="content-rec-video h1-resize">
-      <h1>วีดีโอแนะนำ</h1>
-      <div class="row marr-topp">
-        <div class="col-md-4" v-for="(items,index) in video" :key="index">
-          <div class="cards marr-zio">
-            <router-link
-              :to="{ name: 'ContentVideo', params: { idContent: items.idContent } }"
-              class="a-link-ro"
-              v-bind:title="items.nameContent"
+      <div class="mar-top h1-resize">
+        <h1>เรื่องล่าสุด</h1>
+        <div class="container-w">
+          <div class="row">
+            <div
+              class="col-md-4"
+              v-for="(item,index) in info"
+              :key="index"
             >
-              <div class="hover-video-content">
-                <img v-bind:src="setUrlImage(items.imageContent)">
-                <div class="middle">
-                  <div class="icon-play">
-                    <i class="fas fa-play-circle"></i>
-                  </div>
+              <div
+                class="card"
+                style="width: auto;"
+              >
+                <img
+                  v-bind:src="setUrlImage(item.imageContent)"
+                  class="card-img-top"
+                  alt="Card image cap"
+                >
+                <div class="card-body">
+                  <h5 class="card-title">{{item.nameContent}}</h5>
+                  <p class="date-card">
+                    <i class="far fa-calendar-alt"></i>
+                    {{ item.createTime | changeDateFilter}}
+                  </p>
+                  <p class="card-text">{{item.scriptContent}}</p>
+                  <button
+                    class="btn btn-primary btn-center"
+                    @click.stop.prevent="clickContent(item.idContent,item.idCategory)"
+                    v-bind:title="item.nameContent"
+                  >อ่านเพิ่มเติม</button>
                 </div>
               </div>
-              <h5 class="card-title">{{items.nameContent}}</h5>
-            </router-link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="mar-top h1-resize bt-footet-fix">
-      <h1>รูปภาพกิจกรรม</h1>
-      <div class="container-w">
-        <div class="row">
+      <div class="content-rec-video h1-resize">
+        <h1>วีดีโอแนะนำ</h1>
+        <div class="row marr-topp">
           <div
             class="col-md-4"
-            style="margin-bottom: 25px;"
-            v-for="(itemsim,index) in images"
+            v-for="(items,index) in video"
             :key="index"
           >
-            <router-link
-              :to="{ name: 'content', params: { idContent: itemsim.idContent } }"
-              v-bind:title="itemsim.nameContent"
-            >
-              <div class="on-title-image">
-                <div class="hover-image-zoom">
-                  <img v-bind:src="setUrlImage(itemsim.imageContent)">
-                </div>
-                <div class="media__content">
-                  <h5>{{itemsim.nameContent}}</h5>
-                  <div class="date-content-on-image">
-                    <i class="far fa-calendar-alt"></i>
-                    {{ itemsim.createTime | changeDateFilter}}
+            <div class="cards marr-zio">
+              <router-link
+                :to="{ name: 'ContentVideo', params: { idContent: items.idContent } }"
+                class="a-link-ro"
+                v-bind:title="items.nameContent"
+              >
+                <div class="hover-video-content">
+                  <img v-bind:src="setUrlImage(items.imageContent)">
+                  <div class="middle">
+                    <div class="icon-play">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </router-link>
+                <h5 class="card-title">{{items.nameContent}}</h5>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mar-top h1-resize bt-footet-fix">
+        <h1>รูปภาพกิจกรรม</h1>
+        <div class="container-w">
+          <div class="row">
+            <div
+              class="col-md-4"
+              style="margin-bottom: 25px;"
+              v-for="(itemsim,index) in images"
+              :key="index"
+            >
+              <router-link
+                :to="{ name: 'content', params: { idContent: itemsim.idContent } }"
+                v-bind:title="itemsim.nameContent"
+              >
+                <div class="on-title-image">
+                  <div class="hover-image-zoom">
+                    <img v-bind:src="setUrlImage(itemsim.imageContent)">
+                  </div>
+                  <div class="media__content">
+                    <h5>{{itemsim.nameContent}}</h5>
+                    <div class="date-content-on-image">
+                      <i class="far fa-calendar-alt"></i>
+                      {{ itemsim.createTime | changeDateFilter}}
+                    </div>
+                  </div>
+                </div>
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -276,7 +367,6 @@ export default {
     }
   }
 };
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -328,17 +418,17 @@ nav ul li a:hover {
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
 }
 nav ul li a {
-    padding: 8px 1rem !important;
+  padding: 8px 1rem !important;
 }
 nav ul li {
   font-size: 21px;
 }
 .active {
-    background-color: transparent !important;
-    font-weight: bold;   
+  background-color: transparent !important;
+  font-weight: bold;
 }
-.active a{
-      color: #74e152 !important;
+.active a {
+  color: #74e152 !important;
 }
 /* .h-450{
   height: 450px;
@@ -388,7 +478,7 @@ footer {
   padding: 18px;
   color: #fff;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .color-fff-nav a {
   color: #333 !important;

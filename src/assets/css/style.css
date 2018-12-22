@@ -125,7 +125,7 @@ footer {
   padding: 18px;
   color: #fff;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .color-fff-nav a {
@@ -373,7 +373,7 @@ footer {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
 }
 .cur{
   cursor: pointer;
@@ -397,7 +397,7 @@ footer {
   border-radius: .25rem;
   box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.075);
 }
-.card-text{ 
+.card-text{
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -514,7 +514,7 @@ a:hover{
   background-color: #648dff !important;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
-  transition: all .3s; 
+  transition: all .3s;
 }
 nav ul li:hover {
   background-color: transparent !important;

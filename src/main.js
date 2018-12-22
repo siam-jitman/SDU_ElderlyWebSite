@@ -9,6 +9,8 @@ import router from './router'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import VueCkeditor from 'vue-ckeditor5'
 
+import "./assets/css/style.scss";
+
 Vue.config.productionTip = false
 const options = {
   editors: {

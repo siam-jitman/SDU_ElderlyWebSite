@@ -61,6 +61,7 @@ function doPost(url, body, headers) {
  * @return Promise
  */
 function doPostFormData(url, body) {
+  uiUtil.bus.post(constantUtil.EVENT.COMMMON.GLOBALLOADING);
   let setHeaders = {};
   return bus.axios.post(url, body, { "Content-Type": "multipart/form-data" });
 }
@@ -74,6 +75,7 @@ function doPostFormData(url, body) {
  * @return Promise
  */
 function doPostWithCatch(url, body, headers) {
+  uiUtil.bus.post(constantUtil.EVENT.COMMMON.GLOBALLOADING);
   try {
     let setHeaders = {};
     if (!_.isEmpty(headers)) {
@@ -86,6 +88,7 @@ function doPostWithCatch(url, body, headers) {
 }
 
 function doPost_DefaultBody(url, body, headers) {
+  uiUtil.bus.post(constantUtil.EVENT.COMMMON.GLOBALLOADING);
   let setHeaders = {};
   if (!_.isEmpty(headers)) {
     setHeaders = headers;

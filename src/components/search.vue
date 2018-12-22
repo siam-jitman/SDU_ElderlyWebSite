@@ -1,77 +1,129 @@
 <template>
   <div id="callaxois">
-    <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#"><img src="http://tayaitourism.com/public/image/logo/logo.png" alt="tayaitourism" class="img-logo"></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mar-left">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">
-              หน้าหลัก
-              <span class="sr-only">(current)</span>
-            </router-link>
-          </li>
-          <!-- search-popup -->
-           <li class="nav-item active">            
-            <router-link  class="nav-link" to="/ค้นหา">ค้นหา</router-link>
-          </li>
-          <!-- close-search-popup -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="javascrip:void(0);"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >หมวดหมู่</a>
-            <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-             <router-link
-                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
-                class="dropdown-item"
-              >วีดิทัศน์ (Video)</router-link>
+    <div class="main-content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
+        <a
+          class="navbar-brand"
+          href="#"
+        ><img
+            src="http://tayaitourism.com/public/image/logo/logo.png"
+            alt="tayaitourism"
+            class="img-logo"
+          ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mar-left">
+            <li class="nav-item">
               <router-link
-                :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
-                class="dropdown-item"
-              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+                class="nav-link"
+                to="/"
+              >
+                หน้าหลัก
+                <span class="sr-only">(current)</span>
+              </router-link>
+            </li>
+            <!-- search-popup -->
+            <li class="nav-item active">
               <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
-                class="dropdown-item"
-              >ภาพเขียน (Drawing picture)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
-                class="dropdown-item"
-              >ภาพนิ่ง (Slides)</router-link>
-              <router-link
-                :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
-                class="dropdown-item"
-              >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link> 
-              <a class="dropdown-item" href="http://tayaitourism.com/admin/">เข้าสู่ระบบ</a>
-            </div>
-          </li>
-        </ul>
+                class="nav-link"
+                to="/ค้นหา"
+              >ค้นหา</router-link>
+            </li>
+            <!-- close-search-popup -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="javascrip:void(0);"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >หมวดหมู่</a>
+              <div
+                class="dropdown-menu color-fff-nav"
+                aria-labelledby="navbarDropdown"
+              >
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 2  } }"
+                  class="dropdown-item"
+                >ภาพนิ่ง (Slides)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 8  } }"
+                  class="dropdown-item"
+                >วีดิทัศน์ (Video)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 3  } }"
+                  class="dropdown-item"
+                >ภาพเขียน (Drawing picture)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 1  } }"
+                  class="dropdown-item"
+                >ภาพเคลื่อนไหว 2 มิติ (2D Animation)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 6  } }"
+                  class="dropdown-item"
+                >ภาพเคลื่อนไหว 3 มิติ (3D Animation)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 5  } }"
+                  class="dropdown-item"
+                >อินโฟกราฟิก (Infographics)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 7  } }"
+                  class="dropdown-item"
+                >โมชั่นกราฟิก (Motiongraphics)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
+                  class="dropdown-item"
+                >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+                <router-link
+                  :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
+                  class="dropdown-item"
+                >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>
+                <a
+                  class="dropdown-item"
+                  href="http://tayaitourism.com/admin/"
+                >เข้าสู่ระบบ</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="h1-search-header">
+        <h1><i class="fas fa-search"></i> ค้นหา</h1>
       </div>
-    </nav>
-    <div class="h1-search-header">
-       <h1><i class="fas fa-search"></i> ค้นหา</h1>
-    </div>       
-    <div class="container bt-footet-fix">
-      <input type="text" class="form-control search-content" id="exampleFormControlInput1" placeholder="กรุณาใส่คำที่ต้องการค้นหา" v-model="search">
-      
-<div class="row">
-        <div class="col-md-4" v-for="(item,index) in filteredContent" :key="index">
-            <div class="card" style="width: auto;">
+      <div class="container bt-footet-fix">
+        <input
+          type="text"
+          class="form-control search-content"
+          id="exampleFormControlInput1"
+          placeholder="กรุณาใส่คำที่ต้องการค้นหา"
+          v-model="search"
+        >
+
+        <div class="row">
+          <div
+            class="col-md-4"
+            v-for="(item,index) in filteredContent"
+            :key="index"
+          >
+            <div
+              class="card"
+              style="width: auto;"
+            >
               <img
                 v-bind:src="setUrlImage(item.imageContent)"
                 class="card-img-top"
@@ -91,8 +143,9 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </div>
-    </div>  
     <footer>
       <h4 style="font-size: 18px;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยสวนดุสิต</h4>
     </footer>
@@ -109,12 +162,11 @@ import validateUtil from "../common/validateUtil/index";
 import VueMoment from "vue-moment";
 
 var moment = require("moment");
-export default { 
-  
+export default {
   data() {
-    return {     
+    return {
       info: [],
-      search:''
+      search: ""
     };
   },
   filters: {
@@ -124,6 +176,8 @@ export default {
     }
   },
   mounted() {
+    window.scrollTo(0, 0);
+
     var call = apiUtil.callService.doPost(
       globalUtil.SERVICES.CONTENT.URL_SEARCH_CONTENT
     );
@@ -133,7 +187,7 @@ export default {
       function(response) {
         this.info = response.resultData;
       }.bind(this)
-    );   
+    );
   },
   methods: {
     clickContent(id, idCategory) {
@@ -150,16 +204,18 @@ export default {
       }
     },
     setUrlImage(name) {
-      return globalUtil.SERVICES.URI_IMAGE_PROFILE + name;      
+      return globalUtil.SERVICES.URI_IMAGE_PROFILE + name;
     }
-  } ,
-  computed:{
-filteredContent: function(){
-  return this.info.filter((item)=>{
-    return item.nameContent.toLowerCase().includes(this.search.toLowerCase())
-  })
-}
-  } 
+  },
+  computed: {
+    filteredContent: function() {
+      return this.info.filter(item => {
+        return item.nameContent
+          .toLowerCase()
+          .includes(this.search.toLowerCase());
+      });
+    }
+  }
 };
 </script>
 
@@ -268,10 +324,10 @@ footer {
   padding: 18px;
   color: #fff;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-      position: fixed;
-    width: 100%;
-    bottom: 0;
+  /* margin-top: 30px;
+      position: fixed; */
+  width: 100%;
+  /* bottom: 0; */
 }
 .color-fff-nav a {
   color: #333 !important;

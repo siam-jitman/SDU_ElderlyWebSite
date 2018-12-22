@@ -1,87 +1,147 @@
 <template>
   <div id="callaxois">
-    <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-      <a class="navbar-brand" href="#">LOGO</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mar-left">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">หน้าหลัก
-              <span class="sr-only">(current)</span>
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascrip:void(0);">ค้นหา</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="javascrip:void(0);"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >หมวดหมู่</a>
-            <div class="dropdown-menu color-fff-nav" aria-labelledby="navbarDropdown">
-              <router-link class="dropdown-item" to="/Animation">แอนิเมชั่น(Animation)</router-link>
-              <router-link class="dropdown-item" to="/Cartoon">การ์ตูน(Cartoon)</router-link>
-              <router-link class="dropdown-item" to="/Ebook">หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
-              <router-link class="dropdown-item" to="/Infographics">อินโฟกราฟิก (Infographics)</router-link>
-              <router-link class="dropdown-item" to="/Motiongraphics">โมชั่นกราฟิก (Motiongraphics)</router-link>
+    <div class="main-content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
+        <a
+          class="navbar-brand"
+          href="#"
+        >LOGO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mar-left">
+            <li class="nav-item">
               <router-link
-                class="dropdown-item"
-                to="/Art"
-              >เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
-              <router-link class="dropdown-item" to="/VR">ความจริงเสมือน (Virtual reality)</router-link>
-              <router-link class="dropdown-item" to="/video">วีดิทัศน์ (Video)</router-link>
-              <router-link
-                class="dropdown-item"
-                to="/Dimage"
-              >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+                class="nav-link"
+                to="/"
+              >หน้าหลัก
+                <span class="sr-only">(current)</span>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascrip:void(0);"
+              >ค้นหา</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="javascrip:void(0);"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >หมวดหมู่</a>
+              <div
+                class="dropdown-menu color-fff-nav"
+                aria-labelledby="navbarDropdown"
+              >
+                <router-link
+                  class="dropdown-item"
+                  to="/Animation"
+                >แอนิเมชั่น(Animation)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/Cartoon"
+                >การ์ตูน(Cartoon)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/Ebook"
+                >หนังสืออิเล็กทรอนิกส์(Electronic book)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/Infographics"
+                >อินโฟกราฟิก (Infographics)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/Motiongraphics"
+                >โมชั่นกราฟิก (Motiongraphics)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/Art"
+                >เทคโนโลยีเออาร์ (Augmentation Reality Technology)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/VR"
+                >ความจริงเสมือน (Virtual reality)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/video"
+                >วีดิทัศน์ (Video)</router-link>
+                <router-link
+                  class="dropdown-item"
+                  to="/Dimage"
+                >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="content-all text-left-al">
+        <div class="h1-head-cus">
+          <h1>ความจริงเสมือน (Virtual reality)</h1>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 border-bt-v">
+              <div class="h3-header-vr">
+                <h3>แต่งบ้านร่วมสมัย แฝงความเป็นไทย</h3>
+              </div>
+              <iframe
+                width="100%"
+                height="415"
+                src="https://www.youtube.com/embed/Z0180hEnKUI"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
             </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="content-all text-left-al">
-      <div class="h1-head-cus">
-        <h1>ความจริงเสมือน (Virtual reality)</h1>
-      </div>
-      <div class="container">
-      <div class="row">
-          <div class="col-md-12 border-bt-v">
+            <div class="col-md-12 border-bt-v">
               <div class="h3-header-vr">
-                  <h3>แต่งบ้านร่วมสมัย แฝงความเป็นไทย</h3>  
-                  </div>              
-             <iframe width="100%" height="415" src="https://www.youtube.com/embed/Z0180hEnKUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             
+                <h3>แต่งบ้านร่วมสมัย แฝงความเป็นไทย</h3>
+              </div>
+              <iframe
+                width="100%"
+                height="415"
+                src="https://www.youtube.com/embed/Z0180hEnKUI"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+            <div class="col-md-12 border-bt-v">
+              <div class="h3-header-vr">
+                <h3>แต่งบ้านร่วมสมัย แฝงความเป็นไทย</h3>
+              </div>
+              <iframe
+                width="100%"
+                height="415"
+                src="https://www.youtube.com/embed/Z0180hEnKUI"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+
           </div>
-          <div class="col-md-12 border-bt-v">
-              <div class="h3-header-vr">
-                  <h3>แต่งบ้านร่วมสมัย แฝงความเป็นไทย</h3>  
-                  </div>              
-             <iframe width="100%" height="415" src="https://www.youtube.com/embed/Z0180hEnKUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             
-          </div> 
-          <div class="col-md-12 border-bt-v">
-              <div class="h3-header-vr">
-                  <h3>แต่งบ้านร่วมสมัย แฝงความเป็นไทย</h3>  
-                  </div>              
-             <iframe width="100%" height="415" src="https://www.youtube.com/embed/Z0180hEnKUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             
-          </div>    
-          
-      </div>
+        </div>
       </div>
     </div>
     <footer>
@@ -102,6 +162,8 @@ export default {
     };
   },
   mounted() {
+    window.scrollTo(0, 0);
+
     var self = this;
     axios
       .get("https://api.coindesk.com/v1/bpi/currentprice.json")
