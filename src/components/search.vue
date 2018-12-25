@@ -94,7 +94,7 @@
                   class="dropdown-item"
                 >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item dis-mome-mobile-menu"
                   href="http://tayaitourism.com/admin/"
                 >เข้าสู่ระบบ</a>
               </div>

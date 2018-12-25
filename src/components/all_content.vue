@@ -92,7 +92,7 @@
                   class="dropdown-item cur line-dropdown-list"
                 >หนังสืออิเล็กทรอนิกส์(Electronic book)</div>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item dis-mome-mobile-menu"
                   href="http://tayaitourism.com/admin/"
                 >เข้าสู่ระบบ</a>
               </div>
@@ -125,8 +125,9 @@
                   </p>
                   <p class="card-text">{{items.scriptContent}}</p>
                   <button
-                    class="btn btn-primary"
-                    @click.stop.prevent="clickContent(items.idContent,item.idCategory)"
+                    class="btn btn-primary btn-center"
+                    @click.stop.prevent="clickContent(items.idContent,items.idCategory)"
+                    v-bind:title="items.nameContent"
                   >อ่านเพิ่มเติม</button>
                 </div>
               </div>
@@ -214,4 +215,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.card-body{
+    text-align: left;
+}
+.date-card{
+    font-size: 13px;
+    color: #a5a5a5;
+}
 </style>

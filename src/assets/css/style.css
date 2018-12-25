@@ -557,10 +557,26 @@ nav ul li:hover {
 .embed-responsive{
   height: 400px !important;
 }
+.dropdown-menu:after{
+  content: " ";
+  display: none !important;
+}
+.carousel-inner{
+  height: auto !important;
+}
+.dis-mome-mobile-menu{
+  display: none !important;
+}
+.color-fff-nav a:nth-child(9) {
+  border-bottom: none !important;
+}
 }
 @media (max-width: 480px) {
   .container-w{
     padding: 15px 35px !important;
+ }
+ .content-rec-video{
+  padding: 15px 35px !important;
  }
 }
 @media (max-width: 351px) {
