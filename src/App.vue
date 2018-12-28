@@ -2,8 +2,23 @@
   <div id="app">
     <div v-show="isLoading">
       <div class="loading">
-        <div class="lds-css ng-scope"><div  class="lds-double-ring"><div></div><div></div></div>    
-         </div>         
+        <div
+          class="d-flex justify-content-center"
+          style="height: 100vh; width: 100vw;"
+        >
+          <div
+            class="align-self-center"
+            align="center"
+          >
+
+            <div class="lds-css ng-scope">
+              <div class="lds-double-ring">
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <router-view />
@@ -50,8 +65,7 @@ export default {
       console.log("GLOBALLOADED = ", this.stackCall);
     });
     uiUtil.bus.on(constantUtil.EVENT.COMMMON.GLOBALLOADED_OPA, flag => {
-
-        this.isLoading = false;
+      this.isLoading = false;
       console.log("GLOBALLOADED = ", this.stackCall);
     });
   }
@@ -74,12 +88,12 @@ export default {
   z-index: 9999;
   height: 2em;
   width: 2em;
-  overflow: show;
+  /* overflow: show;
   margin: auto;
   top: 0;
   left: 0;
   bottom: 0;
-  right: 0;
+  right: 0; */
 }
 
 /* Transparent Overlay */
@@ -137,13 +151,13 @@ export default {
 }
 .lds-double-ring {
   position: relative;
-  }
+}
 .lds-double-ring div {
   position: absolute;
   width: 160px;
   height: 160px;
-  top: 20px;
-  left: 20px;
+  top: 0px;
+  left: 0px;
   border-radius: 50%;
   border: 10px solid #000;
   border-color: #648dff transparent #648dff transparent;
@@ -153,8 +167,8 @@ export default {
 .lds-double-ring div:nth-child(2) {
   width: 136px;
   height: 136px;
-  top: 32px;
-  left: 32px;
+  top: 0px;
+  left: 0px;
   border-color: transparent #99b4ff transparent #99b4ff;
   -webkit-animation: lds-double-ring_reverse 2.4s linear infinite;
   animation: lds-double-ring_reverse 2.4s linear infinite;
