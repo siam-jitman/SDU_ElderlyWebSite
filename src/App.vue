@@ -74,6 +74,18 @@ export default {
 
 <style>
 @import "assets/css/style.css";
+
+@import url("https://fonts.googleapis.com/css?family=Sriracha");
+
+.text-logo {
+  font-family: "Sriracha", sans-serif;
+  font-size: calc(1em + 1vw);
+  font-weight: bold;
+  padding-left: 10px;
+  text-shadow: 2px 2px #0e1889;
+  letter-spacing: 2px;
+}
+
 #app {
   /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
@@ -85,7 +97,7 @@ export default {
 
 .loading {
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
   height: 2em;
   width: 2em;
   /* overflow: show;
@@ -98,6 +110,7 @@ export default {
 
 /* Transparent Overlay */
 .loading:before {
+  z-index: 99;
   content: "";
   display: block;
   position: fixed;
@@ -179,13 +192,13 @@ export default {
   -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
   transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 }
-.card-loading-mobile{
+.card-loading-mobile {
   display: none;
 }
 @media (max-width: 992px) {
   .loading {
-  height: 50% !important;
-  width: 50% !important; 
-}
+    height: 50% !important;
+    width: 50% !important;
+  }
 }
 </style>

@@ -2,10 +2,19 @@
   <div id="callaxois">
     <div class="main-content">
       <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-        <a
-          class="navbar-brand"
-          href="#"
-        >LOGO</a>
+        <a class="navbar-brand" href="#">
+          <table>
+            <tr>
+              <td>
+                <img
+                  src="http://tayaitourism.com/public/image/logo/logo.png"
+                  alt="tayaitourism"
+                  class="img-logo"
+                ></td>
+              <td><span class="text-logo">ตา<span style="color: #ff8ef6">ยาย</span>ท่องเที่ยว</span></td>
+            </tr>
+          </table>
+        </a>
         <button
           class="navbar-toggler"
           type="button"

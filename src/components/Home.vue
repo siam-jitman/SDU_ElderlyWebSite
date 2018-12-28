@@ -5,14 +5,19 @@
         id="global-nav"
         class="navbar navbar-expand-lg navbar-light tran-bg"
       >
-        <a
-          class="navbar-brand"
-          href="#"
-        ><img
-            src="http://tayaitourism.com/public/image/logo/logo.png"
-            alt="tayaitourism"
-            class="img-logo"
-          ></a>
+        <a class="navbar-brand" href="#">
+          <table>
+            <tr>
+              <td>
+                <img
+                  src="http://tayaitourism.com/public/image/logo/logo.png"
+                  alt="tayaitourism"
+                  class="img-logo"
+                ></td>
+              <td><span class="text-logo">ตา<span style="color: #ff8ef6">ยาย</span>ท่องเที่ยว</span></td>
+            </tr>
+          </table>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -428,7 +433,7 @@ nav ul li {
   font-weight: bold;
 }
 .active a {
-  color: #74e152 !important;
+  /* color: #ff8ef6 !important; */
 }
 /* .h-450{
   height: 450px;

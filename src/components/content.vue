@@ -2,14 +2,19 @@
   <div id="callaxois">
     <div class="main-content">
       <nav class="navbar navbar-expand-lg navbar-light bg-bb pdd-z">
-        <a
-          class="navbar-brand"
-          href="#"
-        ><img
-            src="http://tayaitourism.com/public/image/logo/logo.png"
-            alt="tayaitourism"
-            class="img-logo"
-          ></a>
+        <a class="navbar-brand" href="#">
+          <table>
+            <tr>
+              <td>
+                <img
+                  src="http://tayaitourism.com/public/image/logo/logo.png"
+                  alt="tayaitourism"
+                  class="img-logo"
+                ></td>
+              <td><span class="text-logo">ตา<span style="color: #ff8ef6">ยาย</span>ท่องเที่ยว</span></td>
+            </tr>
+          </table>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -112,10 +117,16 @@
         style=" width: 100% "
       >
     </div> -->
+      <!-- <a
+        v-show="info.idCategory == '4'"
+        v-bind:href="setLinkHref(info.fileEBookContent)"
+        class="btn-download-ebook"
+      >
+        <i class="fas fa-book"></i> เปิดหนังสืออิเล็กทรอนิกส์
+      </a> -->
       <a
         v-show="info.idCategory == '4'"
-        v-bind:href="setLink(info.fileEBookContent)"
-        target="_blank"
+        :onClick="setLink(info.fileEBookContent)"
         class="btn-download-ebook"
       >
         <i class="fas fa-book"></i> เปิดหนังสืออิเล็กทรอนิกส์
@@ -199,8 +210,23 @@ export default {
       console.log("ckReady");
       // uiUtil.bus.post(constantUtil.EVENT.COMMMON.GLOBALLOADED_OPA);
     },
+    setLinkHref(name) {
+      var src = globalUtil.SERVICES.URI_EBOOK + name;
+
+      // var w = window.innerWidth;
+      // var h = window.innerHeight;
+      return src;
+    },
     setLink(name) {
-      return globalUtil.SERVICES.URI_EBOOK + name;
+      var src = globalUtil.SERVICES.URI_EBOOK + name;
+
+      // var w = window.innerWidth;
+      // var h = window.innerHeight;
+      return (
+        'window.open("' +
+        src +
+        '", "_system"); return false;'
+      );
     },
     setUrlImageProfile(name) {
       return globalUtil.SERVICES.URI_IMAGE_PROFILE + name;
@@ -227,6 +253,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.btn-download-ebook {
+  cursor: pointer;
+}
 .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
   border: none !important;
 }
