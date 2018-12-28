@@ -2,8 +2,8 @@
   <div id="app">
     <div v-show="isLoading">
       <div class="loading">
-        <div class="lds-css ng-scope"><div  class="lds-double-ring"><div></div><div></div></div>
-        </div>
+        <div class="lds-css ng-scope"><div  class="lds-double-ring"><div></div><div></div></div>    
+         </div>         
       </div>
     </div>
     <router-view />
@@ -89,7 +89,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
   background-color: #fff;
   opacity: 0.5;
@@ -165,6 +165,13 @@ export default {
   -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
   transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 }
-
-
+.card-loading-mobile{
+  display: none;
+}
+@media (max-width: 992px) {
+  .loading {
+  height: 50% !important;
+  width: 50% !important; 
+}
+}
 </style>
