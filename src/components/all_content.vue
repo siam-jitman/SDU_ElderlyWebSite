@@ -91,7 +91,7 @@
                 <div
                   @click.stop.prevent="clickdropdowncontentlist(9)"
                   class="dropdown-item cur line-dropdown-list"
-                >ภาพมุมมองสามมิติ (3D perspective image)</div>
+                >ภาพมุมกว้าง (Perspective Image)</div>
                 <div
                   @click.stop.prevent="clickdropdowncontentlist(4)"
                   class="dropdown-item cur line-dropdown-list"

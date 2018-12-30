@@ -527,11 +527,23 @@ nav ul li:hover {
 .bt-footet-fix{
   margin-bottom: 80px;
 }
+.card-title{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 
 @media (max-width: 992px) {
   .dropdown-menu:before {
     display: none;
+  }
+  .card-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 100;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .none-display-link{
     display: none;

@@ -91,7 +91,7 @@
                 <router-link
                   :to="{ name: 'AllContent', params: { limit: 200, nameContent:'', idCategory: 9  } }"
                   class="dropdown-item"
-                >ภาพมุมมองสามมิติ (3D perspective image)</router-link>
+                >ภาพมุมกว้าง (Perspective Image)</router-link>
                 <router-link
                   :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
                   class="dropdown-item"
