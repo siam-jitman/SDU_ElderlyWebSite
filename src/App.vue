@@ -1,16 +1,15 @@
 <template>
   <div id="app">
     <div v-show="isLoading">
-      <div class="loading">
+      <div class="loading" style="width: 100vw;">
         <div
           class="d-flex justify-content-center"
-          style="height: 100vh; width: 100vw;"
+          style="height: 100vh; opacity: 1; background: #fff;"
         >
           <div
             class="align-self-center"
             align="center"
           >
-
             <div class="lds-css ng-scope">
               <div class="lds-double-ring">
                 <div></div>
@@ -97,9 +96,8 @@ export default {
 
 .loading {
   position: fixed;
-  z-index: 99999;
-  height: 2em;
-  width: 2em;
+  z-index: 999;
+  left: 10;
   /* overflow: show;
   margin: auto;
   top: 0;
@@ -119,7 +117,7 @@ export default {
   width: auto;
   height: 100%;
   background-color: #fff;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 @keyframes lds-double-ring {
@@ -195,10 +193,10 @@ export default {
 .card-loading-mobile {
   display: none;
 }
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .loading {
     height: 50% !important;
     width: 50% !important;
   }
-}
+} */
 </style>
