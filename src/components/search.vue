@@ -98,6 +98,8 @@
                   :to="{ name: 'AllContent', params: {  limit: 200, nameContent:'', idCategory: 4  } }"
                   class="dropdown-item"
                 >หนังสืออิเล็กทรอนิกส์ (Electronic book)</router-link>
+                <a href="https://thai.tourismthailand.org/" class="dropdown-item">การท่องเที่ยวแห่งประเทศไทย</a>
+                <a href="http://www.dusit.ac.th/" class="dropdown-item">มหาวิทยาลัยสวนดุสิต</a>
                 <a
                   class="dropdown-item dis-mome-mobile-menu"
                   href="http://tayaitourism.com/admin/"
@@ -339,7 +341,7 @@ footer {
   border-bottom: 1px solid #ccc4c4;
   padding: 10px 15px !important;
 }
-.color-fff-nav a:nth-child(10) {
+.color-fff-nav a:nth-child(12) {
   border-bottom: none !important;
 }
 .hover-image-zoom {
