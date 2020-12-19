@@ -7,7 +7,7 @@
             <tr>
               <td>
                 <img
-                  src="http://tayaitourism.com/public/image/logo/logo.png"
+                  src="http://wellnesstourism.in.th/tayai/public/image/logo/logo.png"
                   alt="tayaitourism"
                   class="img-logo"
                 ></td>
@@ -102,7 +102,7 @@
                 <a href="http://www.dusit.ac.th/" class="dropdown-item">มหาวิทยาลัยสวนดุสิต</a>
                 <a
                   class="dropdown-item"
-                  href="http://tayaitourism.com/admin/"
+                  href="http://wellnesstourism.in.th/tayai/admin/"
                 >เข้าสู่ระบบ</a>
               </div>
             </li>

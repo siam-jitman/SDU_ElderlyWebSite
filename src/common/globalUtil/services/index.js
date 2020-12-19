@@ -1,6 +1,6 @@
 /*-- Url Call Server --*/
 
-var BASE_URL = "http://tayaitourism.com";
+var BASE_URL = "https://wellnesstourism.in.th/tayai";
 // var URI_SYS = BASE_URL + '/botManager/apis/';
 var URI_SERVICE = BASE_URL + "/service/";
 var URI_IMAGE = BASE_URL + "/public/image/";
