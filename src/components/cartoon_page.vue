@@ -7,7 +7,7 @@
             <tr>
               <td>
                 <img
-                  src="http://tayaitourism.com/public/image/logo/logo.png"
+                  src="http://wellnesstourism.in.th/tayai/public/image/logo/logo.png"
                   alt="tayaitourism"
                   class="img-logo"
                 ></td>
